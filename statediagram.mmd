@@ -1,0 +1,15 @@
+stateDiagram-v2
+    [*] --> Piglet
+
+    Piglet --> Sick: illness
+    Piglet --> Grower: weaned
+    Sick --> Treated: vet_treatment
+    Treated --> Grower
+
+    Grower --> Finisher: matured
+
+    Finisher --> Sold: ready_for_market
+    Finisher --> Slaughter: sold_for_meat
+
+    Sold --> [*]
+    Slaughter --> [*]
