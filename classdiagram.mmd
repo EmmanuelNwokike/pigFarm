@@ -1,0 +1,32 @@
+classDiagram
+    %% Define the classes and their attributes
+    class Farmer {
+        +String id
+        +String name
+        +String contact
+        +manageFarm()
+    }
+    class Barn {
+        +String id
+        +String location
+        +capacity
+    }
+    class Pig {
+        +String id
+        +String breed
+        +Date dob
+        +String status
+        +weight
+        +recordHealth()
+    }
+    class Feed {
+        +String id
+        +String type
+        +float quantity
+        +feedPig()
+    }
+
+    %% Define the relationships (associations)
+    Farmer "1" -- "many" Barn : manages
+    Barn "1" -- "many" Pig : houses
+    Pig "many" -- "many" Feed : consumes
