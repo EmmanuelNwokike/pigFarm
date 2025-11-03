@@ -1,0 +1,29 @@
+%% Use Case Diagram
+graph TD
+    subgraph E-Commerce System
+        U1((Register Account))
+        U2((Login))
+        U3((Browse Items))
+        U4((Add/Remove Item to Cart))
+        U5((Checkout))
+        U6((Make Payment))
+        U7((Complete Order))
+        U8((Cancel Order))
+    end
+
+    ActorC[Customer]
+    ActorA[Store/Admin]
+
+    ActorC --> U1
+    ActorC --> U2
+    ActorC --> U3
+    ActorC --> U4
+    ActorC --> U5
+    ActorC --> U6
+    ActorC --> U7
+    ActorC --> U8
+    ActorA --> U8
+
+    U5 -- include --> U6
+    U6 -- include --> U7
+    U3 -- extend --> U4
